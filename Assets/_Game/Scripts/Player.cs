@@ -35,7 +35,8 @@ public class Player : MonoBehaviour
             ChangeAnim("attack");
             isAttack = true;
             Invoke(nameof(OnAttack), 0.4f);
-            transform.rotation = Quaternion.LookRotation(botInRange[0].transform.position - transform.position);
+            Vector3 direc = botInRange[0].transform.position - transform.position;
+            transform.rotation = Quaternion.LookRotation(new Vector3(direc.x,0f,direc.z));
             timer = 0;
         }
     }
@@ -69,14 +70,12 @@ public class Player : MonoBehaviour
         if (moveVector.x != 0 || moveVector.z != 0)
         {
             ChangeAnim("run");
-            Debug.Log(1);
             isStopMove = false;
             transform.rotation = Quaternion.LookRotation(new Vector3(floatingJoystick.Horizontal, 0, floatingJoystick.Vertical));
         }
         else
         {
             isStopMove = true;
-            Debug.Log(2);
             if (!isAttack) ChangeAnim("idle");
         }
         _rigidbody.MovePosition(transform.position+moveVector);
