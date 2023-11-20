@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Bot : MonoBehaviour
+public class Bot : Character
 {
     private float radius = 20;
-    Vector3 nextPosition;
-    NavMeshAgent myAgent;
+    public Vector3 nextPosition;
+    public NavMeshAgent myAgent;
     private IState currentState;
-    private string currentAnimName;
-    [SerializeField] private Animator anim;
+    public Character target;
+    [SerializeField]public LayerMask characterLayer;
     void Start()
     {
         myAgent = GetComponent<NavMeshAgent>();
@@ -36,20 +36,11 @@ public class Bot : MonoBehaviour
             currentState.OnEnter(this);
         }
     }
-    private void ChangeAnim(string animName)
-    {
-        if (currentAnimName != animName)
-        {
-            anim.ResetTrigger(animName);
-            currentAnimName = animName;
-            anim.SetTrigger(currentAnimName);
-        }
-    }
     public void ChangeAnimRun()
     {
         ChangeAnim("run");
     }
-    public void moveRandom()
+    public void MoveRandom()
     {
         if (Vector3.Distance(nextPosition, transform.position) <= 1.5f)
         {
@@ -68,5 +59,17 @@ public class Bot : MonoBehaviour
             finalPos = hit.position;
         }
         return finalPos;
+    }
+    public void Findtarget()
+    {
+        Collider[] results = new Collider[10];
+        Physics.OverlapSphereNonAlloc(transform.position, 6, results, characterLayer);
+        for (int i = 0; i < results.Length; i++)
+        {
+            if (results[i] != null && results[i].name.Equals(gameObject.name))
+            {
+                target = results[i].GetComponent<Character>();
+            }
+        }
     }
 }

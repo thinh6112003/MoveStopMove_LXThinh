@@ -352,10 +352,11 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
 "Assets/_Game/Scripts/Bot.cs"
+"Assets/_Game/Scripts/Character.cs"
 "Assets/_Game/Scripts/Hammer.cs"
 "Assets/_Game/Scripts/MainCamera.cs"
-"Assets/_Game/Scripts/NewBehaviourScript.cs"
 "Assets/_Game/Scripts/Player.cs"
+"Assets/_Game/Scripts/StateMachine/AttackState.cs"
 "Assets/_Game/Scripts/StateMachine/IState.cs"
 "Assets/_Game/Scripts/StateMachine/PatrolState.cs"
 -langversion:9.0

@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - bot
+  - Character
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Bot
+  - Character
   - Water
   - UI
-  - 
+  - Findtaget
   - 
   - 
   - 
