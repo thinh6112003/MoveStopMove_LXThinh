@@ -812,6 +812,18 @@
       <Project>{79BFDED6-9304-F690-6112-045EE44DF52F}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="LeanPool.csproj">
+      <Project>{54CCEE03-97E8-0144-56F6-0EDB5DE5695E}</Project>
+      <Name>LeanPool</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{EBC96986-58EB-1A46-054A-DBE02FB8FD0C}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{C1EB737F-F808-63F5-7758-D237B671883F}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

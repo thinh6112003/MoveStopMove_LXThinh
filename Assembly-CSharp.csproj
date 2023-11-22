@@ -56,11 +56,11 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Game\Scripts\StateMachine\AttackState.cs" />
     <Compile Include="Assets\_Game\Scripts\StateMachine\PatrolState.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\Bot.cs" />
-    <Compile Include="Assets\_Game\Scripts\Hammer.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
@@ -70,7 +70,12 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\Character.cs" />
     <Compile Include="Assets\_Game\Scripts\MainCamera.cs" />
-    <Compile Include="Assets\_Game\Scripts\StateMachine\AttackState.cs" />
+    <Compile Include="Assets\_Game\Scripts\WeaponItemData.cs" />
+    <Compile Include="Assets\_Game\Scripts\WeaponDataScriptableObject.cs" />
+    <Compile Include="Assets\_Game\Scripts\Bullet.cs" />
+    <Compile Include="Assets\_Game\Scripts\HammerBullet.cs" />
+    <Compile Include="Assets\_Game\Scripts\Weapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\HammerWeapon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -759,6 +764,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="LeanPool.csproj">
+      <Project>{54CCEE03-97E8-0144-56F6-0EDB5DE5695E}</Project>
+      <Name>LeanPool</Name>
+    </ProjectReference>
+    <ProjectReference Include="CW.Common.csproj">
+      <Project>{EBC96986-58EB-1A46-054A-DBE02FB8FD0C}</Project>
+      <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="LeanCommon.csproj">
+      <Project>{C1EB737F-F808-63F5-7758-D237B671883F}</Project>
+      <Name>LeanCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
