@@ -57,25 +57,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\StateMachine\AttackState.cs" />
+    <Compile Include="Assets\_Game\Scripts\Weapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\Bullet.cs" />
     <Compile Include="Assets\_Game\Scripts\StateMachine\PatrolState.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\_Game\Scripts\KnifeWeapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\HammerWeapon.cs" />
     <Compile Include="Assets\_Game\Scripts\Bot.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\_Game\Scripts\DataManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\Player.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\_Game\Scripts\StateMachine\IState.cs" />
+    <Compile Include="Assets\_Game\Scripts\WeaponItemData.cs" />
+    <Compile Include="Assets\_Game\Scripts\Singleton.cs" />
+    <Compile Include="Assets\_Game\Scripts\KnifeBullet.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\_Game\Scripts\WeaponDataScriptableObject.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\Character.cs" />
-    <Compile Include="Assets\_Game\Scripts\MainCamera.cs" />
-    <Compile Include="Assets\_Game\Scripts\WeaponItemData.cs" />
-    <Compile Include="Assets\_Game\Scripts\WeaponDataScriptableObject.cs" />
-    <Compile Include="Assets\_Game\Scripts\Bullet.cs" />
     <Compile Include="Assets\_Game\Scripts\HammerBullet.cs" />
-    <Compile Include="Assets\_Game\Scripts\Weapon.cs" />
-    <Compile Include="Assets\_Game\Scripts\HammerWeapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\MainCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

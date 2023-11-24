@@ -9,17 +9,13 @@ public class Player : Character
     [SerializeField] private float moveSpeed;
     [SerializeField] Rigidbody _rigidbody;
     private bool isSetIndicator=false;
-    
+    protected override void Start()
+    {
+        base.Start();
+    }
     private void Update()
     {
         OnMove();
-        if (Input.GetKeyDown(KeyCode.A)){
-            GameObject newWeapon= Instantiate(weapon);
-            newWeapon.transform.position = throwPoint.position;
-            Rigidbody rigidbody=  newWeapon.AddComponent<Rigidbody>();
-            rigidbody.useGravity= false ;
-            rigidbody.velocity = transform.forward*5;
-        }
         timer += Time.deltaTime;
         if (timer >=3&& isStopMove&& botInRange.Count>0)
         {

@@ -7,10 +7,10 @@ public class Bullet : MonoBehaviour
     public float timer = 0;
     public int characterLayer = 1 << 3;
     public string shooterName;
-    void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 0.6f) LeanPool.Despawn(gameObject);
+        if (timer > 0.6f)LeanPool.Despawn(gameObject);
     }
     private void OnTriggerEnter(Collider other)
     {

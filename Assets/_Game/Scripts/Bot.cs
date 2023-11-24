@@ -11,8 +11,9 @@ public class Bot : Character
     private IState currentState;
     public Character target;
     [SerializeField]public LayerMask characterLayer;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         myAgent = GetComponent<NavMeshAgent>();
         nextPosition = transform.position;
         ChangeState(new PatrolState());

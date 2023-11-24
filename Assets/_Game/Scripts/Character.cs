@@ -5,22 +5,24 @@ using Lean.Pool;
 
 public class Character : MonoBehaviour
 {
-    public WeaponDataScriptableObject weaponDataScriptableObject;
     public bool isStopMove = false;
-    public bool isDead = false;
-    public bool isAttack = false;
-    public string currentAnimName;
-    public Transform throwPoint;
-    public Transform weaponContainer;
+    protected bool isDead = false;
+    protected bool isAttack = false;
+    protected string currentAnimName;
+    [SerializeField]private Transform throwPoint;
+    [SerializeField]private Transform weaponContainer;
+    private Weapon weapon;
     public float timer = 3;
-    public GameObject weapon;
-    public GameObject hammer;
     public Animator anim;
     public List<GameObject> botInRange = new List<GameObject>();
-    private void Start()
+    public WeaponItemData weaponData;
+    protected virtual void Start()
     {
-        Weapon weapon= Instantiate(weaponDataScriptableObject.listWeapon[0].weapon,weaponContainer);
-        //weapon.transform.rotation= ; 
+        Debug.Log(gameObject.name);
+        weaponData = DataManager.Instance.GetWeaponData(Weapontype.hammer);
+        weapon= Instantiate(weaponData.weapon ,weaponContainer);
+        weapon.gameObject.transform.localPosition = new Vector3(0, 0, 0);
+        weapon.transform.localRotation= Quaternion.Euler(180,0,0); 
     }
     private void Update()
     {
@@ -30,31 +32,30 @@ public class Character : MonoBehaviour
     {
         ChangeAnim("attack");
         isAttack = true;
-        Invoke(nameof(SpawnHammer), 0.4f);
+        Invoke(nameof(SpawnBullet), 0.4f);
         Vector3 direc = target.position - transform.position;
         transform.rotation = Quaternion.LookRotation(new Vector3(direc.x, 0f, direc.z));
         timer = 0;
     }
-    private void SpawnHammer()
+    private void SpawnBullet()
     {
         if (isStopMove)
         {
-            //hammer.SetActive(false);
-            //Hammer newWeapon = LeanPool.Spawn<Hammer>(weapon);
-            //newWeapon.GetComponent<Hammer>().shooterName = gameObject.name;
-            //newWeapon.transform.position = throwPoint.position;
-            //Rigidbody rigidbody = newWeapon.AddComponent<Rigidbody>();
-            //rigidbody.transform.rotation = Quaternion.Euler(new Vector3(-90, 0, 0));
-            //rigidbody.useGravity = false;
-            //rigidbody.velocity = transform.forward * 10f;
-            //Invoke(nameof(SetFalseAttack), 1f);
+            Bullet newBullet = LeanPool.Spawn(weaponData.bullet);
+            newBullet.shooterName = gameObject.name;
+            newBullet.transform.position = throwPoint.position;
+            Rigidbody rigidbody = newBullet.gameObject.AddComponent<Rigidbody>();
+            newBullet.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            rigidbody.useGravity = false;
+            rigidbody.velocity = transform.forward * 10f;
+            Invoke(nameof(SetFalseAttack), 1f);
         }
     }
 
     private void SetFalseAttack()
     {
         isAttack = false;
-        hammer.SetActive(true);
+        weapon.gameObject.SetActive(true);
     }
     public void ChangeAnim(string animName)
     {
