@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
-
+    [SerializeField] private Vector3 beginValue;
     void LateUpdate()
     {
-        transform.position = target.position + offset;
+        if (LevelManager.Instance.playerGamePlay != null)
+        {
+            transform.position = LevelManager.Instance.playerGamePlay.transform.position + offset;
+        }
+        else
+        {
+            transform.position = beginValue;
+        }
     }
 }

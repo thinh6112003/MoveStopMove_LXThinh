@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField]private Transform weaponContainer;
     private Weapon weapon;
     private Vector3 direc;
-    protected bool isDead = false;
+    public bool isDead = false;
     protected bool isAttack = false;
     protected WeaponItemData weaponData;
     protected string currentAnimName= constr.IDLE;

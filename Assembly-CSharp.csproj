@@ -60,15 +60,13 @@
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\Weapon.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\Bullet.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\StateMachine\PatrolState.cs" />
+    <Compile Include="Assets\_Game\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\CGHolder.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\KnifeWeapon.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\HammerWeapon.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Bot.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\SoftEffects.cs" />
     <Compile Include="Assets\_Game\Scripts\Manager\LevelManager.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\Styles.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\UILookAtCamera.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\_Game\Scripts\Manager\DataManager.cs" />
@@ -76,30 +74,24 @@
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Player.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\StateMachine\IState.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\GPUWorker.cs" />
+    <Compile Include="Assets\_Game\Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Data\WeaponItemData.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\Singleton.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\PrintData.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\KnifeBullet.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Data\WeaponDataScriptableObject.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\ClassExtensions.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Character.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\HammerBullet.cs" />
-    <Compile Include="Assets\SoftEffects\Scripts\SoftEffectsFont.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\MainCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\SoftEffects\Shaders\SoftShaderFont.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Pixel Font - Tripfive\_README.txt" />
-    <None Include="Assets\SoftEffects\Shaders\SoftEffectsCompute.compute" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -107,7 +99,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\SoftEffects\Shaders\SoftShaderSpriteWithShadows.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
@@ -115,9 +106,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\SoftEffects\Shaders\SoftEditShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\SoftEffects\Shaders\SoftShaderFontWithShadows.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

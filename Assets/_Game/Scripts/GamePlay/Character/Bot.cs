@@ -16,7 +16,6 @@ public class Bot : Character
     public GameObject indicator;
     public Vector3 nextPosition;
     public NavMeshAgent myAgent;
-    public Character target;
     protected override void Start()
     {
         int weaponTypeRandom = Random.Range(0, 2);
@@ -78,18 +77,6 @@ public class Bot : Character
         }
         return finalPos;
     }
-    public void Findtarget()
-    {
-        Collider[] results = new Collider[10];
-        Physics.OverlapSphereNonAlloc(transform.position, 6, results, characterLayer);
-        for (int i = 0; i < results.Length; i++)
-        {
-            if (results[i] != null && results[i].name.Equals(gameObject.name))
-            {
-                target = results[i].GetComponent<Character>();
-            }
-        }
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(constr.CHARACTER))
@@ -102,7 +89,6 @@ public class Bot : Character
             myAgent.destination = gameObject.transform.position;
             myAgent.isStopped = true;
             rigidbody.velocity= Vector3.zero;
-            isDead = true;
             Invoke(nameof(DestroyCharacter), 2);
             gameObject.layer = layerDefault;
         }

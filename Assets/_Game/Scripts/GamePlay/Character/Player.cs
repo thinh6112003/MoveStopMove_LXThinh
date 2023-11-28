@@ -2,15 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Lean.Pool;
 public class Player : Character
 {
-    [SerializeField] private FloatingJoystick floatingJoystick;
     [SerializeField] private float moveSpeed;
     [SerializeField] Rigidbody _rigidbody;
     private bool isSetIndicator=false;
+    private FloatingJoystick floatingJoystick;
     protected override void Start()
     {
+        floatingJoystick = LevelManager.Instance.floatingJoystick;
         weaponData = DataManager.Instance.GetWeaponData(WeaponType.HAMMER);
         base.Start();
     }
@@ -19,7 +20,7 @@ public class Player : Character
         if (isDead) return;
         OnMove();
         timer += Time.deltaTime;
-        if (timer >=timeRun&& isStopMove&& botInRange.Count>0&& botInRange[0]!=null)
+        if (timer >=timeRun&& isStopMove&& botInRange.Count>0&& botInRange[0]!=null&& GameManager.Instance.gameState!= GameState.UNPLAY)
         {
             OnAttack(botInRange[0].transform);
         }
@@ -66,13 +67,21 @@ public class Player : Character
             other.GetComponent<Bot>().indicator.SetActive(true);
             botInRange.Add(other.gameObject);
         }
-        if (other.CompareTag(constr.WEAPON) && other.GetComponent<Bullet>().shooter.name != gameObject.name)
+        if (other.CompareTag(constr.WEAPON) )
         {
-            SetAnimation(AnimationType.DEAD);
-            isDead = true;
+            Bullet bullet = other.GetComponent<Bullet>();
+            if(bullet.shooter.name != gameObject.name)
+            {
+                SetAnimation(AnimationType.DEAD);
+                LeanPool.Despawn(gameObject);
+                GameManager.Instance.gameState = GameState.UNPLAY;
+                UIManager.Instance.SetKillerName(bullet.shooter.name);
+                UIManager.Instance.TurnLosePanel();
+                UIManager.Instance.SetRank();
+                isDead = true;
+            }
         }
     }
-
 }
 public static class constr
 {

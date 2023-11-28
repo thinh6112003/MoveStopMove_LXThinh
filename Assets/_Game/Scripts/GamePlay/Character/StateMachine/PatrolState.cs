@@ -16,11 +16,19 @@ public class PatrolState : IState
 
     public void OnExecute(Bot bot)
     {
-        timer += Time.deltaTime;
-        bot.MoveRandom();
-        if(timer>bot.timeRun&& bot.botInRange.Count > 0)
+        if(GameManager.Instance.gameState== GameState.UNPLAY)
         {
-            bot.ChangeState(new AttackState());
+            bot.SetAnimation(AnimationType.IDLE);
+        }
+        else
+        {
+            bot.ChangeAnimRun();
+            timer += Time.deltaTime;
+            bot.MoveRandom();
+            if(timer>bot.timeRun&& bot.botInRange.Count > 0)
+            {
+                bot.ChangeState(new AttackState());
+            }
         }
     }
     

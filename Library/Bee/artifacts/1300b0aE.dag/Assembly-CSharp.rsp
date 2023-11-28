@@ -354,13 +354,6 @@
 "Assets/Joystick Pack/Scripts/Joysticks/FixedJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/FloatingJoystick.cs"
 "Assets/Joystick Pack/Scripts/Joysticks/VariableJoystick.cs"
-"Assets/SoftEffects/Scripts/CGHolder.cs"
-"Assets/SoftEffects/Scripts/ClassExtensions.cs"
-"Assets/SoftEffects/Scripts/GPUWorker.cs"
-"Assets/SoftEffects/Scripts/PrintData.cs"
-"Assets/SoftEffects/Scripts/SoftEffects.cs"
-"Assets/SoftEffects/Scripts/SoftEffectsFont.cs"
-"Assets/SoftEffects/Scripts/Styles.cs"
 "Assets/_Game/Scripts/GamePlay/Character/Bot.cs"
 "Assets/_Game/Scripts/GamePlay/Character/Character.cs"
 "Assets/_Game/Scripts/GamePlay/Character/Player.cs"
@@ -379,7 +372,9 @@
 "Assets/_Game/Scripts/GamePlay/Weapon/KnifeWeapon.cs"
 "Assets/_Game/Scripts/GamePlay/Weapon/Weapon.cs"
 "Assets/_Game/Scripts/Manager/DataManager.cs"
+"Assets/_Game/Scripts/Manager/GameManager.cs"
 "Assets/_Game/Scripts/Manager/LevelManager.cs"
+"Assets/_Game/Scripts/Manager/UIManager.cs"
 -langversion:9.0
 
 /deterministic
