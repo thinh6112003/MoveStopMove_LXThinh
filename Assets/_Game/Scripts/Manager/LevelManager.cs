@@ -9,11 +9,25 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private List<Bot> listBot;
     public Player playerGamePlay;
     public FloatingJoystick floatingJoystick;
+    private GameObject zone;
     private int ibot;
+
     public void Start()
     {
-        playerGamePlay= LeanPool.Spawn(playerPrefab);
+        if(zone!= null) Destroy(zone);
+        //if(playerGamePlay!= null)LeanPool.Despawn(playerGamePlay);
+        if (playerGamePlay== null||!playerGamePlay.gameObject.active)
+        { 
+            playerGamePlay = LeanPool.Spawn(playerPrefab);
+        }
+        else
+        {
+            playerGamePlay.transform.position = new Vector3(0, 1, 0);
+        }
+        zone = Instantiate((GameObject)Resources.Load($"Zone" + DataManager.Instance.currentZone));
+        GameManager.Instance.aliveNumber = 50;
         playerGamePlay.isDead = false;
+        playerGamePlay.botInRange = new List<GameObject>();
         ibot = 0;
         for(int i = listBot.Count-1; i > 0; i--)
         {

@@ -1570,6 +1570,7 @@ GameObject:
   - component: {fileID: 5354456246455674618}
   - component: {fileID: 5354456246455674622}
   - component: {fileID: 5354456246455674623}
+  - component: {fileID: 7838620180027775885}
   m_Layer: 3
   m_Name: bot
   m_TagString: Character
@@ -1641,6 +1642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwPoint: {fileID: 5354456246095220035}
   weaponContainer: {fileID: 5354456246109783131}
+  isDead: 0
   isStopMove: 0
   collider: {fileID: 5354456245738780069}
   scale: {x: 1, y: 1, z: 1}
@@ -1656,7 +1658,6 @@ MonoBehaviour:
   indicator: {fileID: 5354456246358901292}
   nextPosition: {x: 0, y: 0, z: 0}
   myAgent: {fileID: 0}
-  target: {fileID: 0}
 --- !u!195 &5354456246455674623
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1679,6 +1680,32 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7838620180027775885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5354456246455674373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08470e2a2343b14e90107557e5208ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 1
+  renderers: []
+  style:
+    texture: {fileID: 2800000, guid: 84487d73ca4b791498332d8f6858417f, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 0}
+    width: 32
+    height: 32
+  showArrow: 1
+  arrowStyle:
+    texture: {fileID: 2800000, guid: 452c9c8d1e2f2084d9c8d3becbf0b296, type: 3}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    margin: 0
+    width: 32
+    height: 32
 --- !u!1 &5354456246544802878
 GameObject:
   m_ObjectHideFlags: 0

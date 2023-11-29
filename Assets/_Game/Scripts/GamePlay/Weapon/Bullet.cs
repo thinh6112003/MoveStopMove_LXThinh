@@ -24,9 +24,10 @@ public class Bullet : MonoBehaviour
                 if (other.GetComponent<Character>().isDead== false)
                 {
                     GameManager.Instance.SetAlive();
+                    //Debug.Log(other.name);
                     other.GetComponent<Character>().isDead = true;
                 }
-                    Character character= shooter.GetComponent<Character>();
+                Character character= shooter.GetComponent<Character>();
                 character.scale = new Vector3(character.scale.x + 0.03f, character.scale.y + 0.03f, character.scale.z + 0.03f);
                 character.gameObject.transform.localScale = character.scale;
                 Destroy(gameObject);

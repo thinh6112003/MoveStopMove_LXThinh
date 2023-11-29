@@ -820,6 +820,10 @@
       <Project>{EBC96986-58EB-1A46-054A-DBE02FB8FD0C}</Project>
       <Name>CW.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="HUDIndicator.csproj">
+      <Project>{4D6D8746-5102-FFBE-E6AD-7EE6C4CBD166}</Project>
+      <Name>HUDIndicator</Name>
+    </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{C1EB737F-F808-63F5-7758-D237B671883F}</Project>
       <Name>LeanCommon</Name>

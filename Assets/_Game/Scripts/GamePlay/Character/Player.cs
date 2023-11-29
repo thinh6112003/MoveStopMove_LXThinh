@@ -32,7 +32,7 @@ public class Player : Character
         Vector3 moveVector= Vector3.zero;
         moveVector.x = floatingJoystick.Horizontal* moveSpeed;
         moveVector.z = floatingJoystick.Vertical* moveSpeed;
-        if (moveVector.x != 0 || moveVector.z != 0)
+        if ((moveVector.x != 0 || moveVector.z != 0 )&& GameManager.Instance.gameState== GameState.PLAY)
         {
             if(currentAnimName!= constr.RUN) SetAnimation(AnimationType.RUN);
             isStopMove = false;
@@ -42,6 +42,7 @@ public class Player : Character
         else
         {
             isStopMove = true;
+            moveVector = Vector3.zero;
             if (!isAttack || lastAnimName==constr.RUN) SetAnimation(AnimationType.IDLE);
         }
         _rigidbody.MovePosition(transform.position+moveVector);
@@ -74,8 +75,14 @@ public class Player : Character
             {
                 SetAnimation(AnimationType.DEAD);
                 LeanPool.Despawn(gameObject);
+                if(DataManager.Instance.hightScore > GameManager.Instance.aliveNumber)
+                {
+                    DataManager.Instance.hightScore = GameManager.Instance.aliveNumber;
+                }
                 GameManager.Instance.gameState = GameState.UNPLAY;
                 UIManager.Instance.SetKillerName(bullet.shooter.name);
+                UIManager.Instance.SetZoneAndHightScore(DataManager.Instance.currentZone,GameManager.Instance.aliveNumber+1);
+                UIManager.Instance.SetSlider();
                 UIManager.Instance.TurnLosePanel();
                 UIManager.Instance.SetRank();
                 isDead = true;

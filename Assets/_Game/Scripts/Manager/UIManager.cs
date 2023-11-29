@@ -6,28 +6,52 @@ using TMPro;
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private Button playButton;
-    [SerializeField] private Button continueButton;
+    [SerializeField] private Button loseToMainButton;
+    [SerializeField] private Button wintoMainButton;
     [SerializeField] private Button onOffMusicButton;
     [SerializeField] private Button onOffVibrationButton;
     [SerializeField] private GameObject coin;      
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject losePanel;
+    [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject playPanel;      
     [SerializeField] private GameObject onMusic;
     [SerializeField] private GameObject offMusic;
     [SerializeField] private GameObject offVibration;
     [SerializeField] private GameObject onVibration;
+    [SerializeField] private Slider slider;
     private bool boolMusic= true;
     private bool boolVibration= true;
     public TextMeshProUGUI textAlive;
     public TextMeshProUGUI killerName;
     public TextMeshProUGUI rank;
+    public TextMeshProUGUI zoneAndHightScore;
+    public TextMeshProUGUI currentZone; 
+    public TextMeshProUGUI nextZone; 
     private void Awake()
     {
         playButton.onClick.AddListener(TurnOffMainMenu);
-        continueButton.onClick.AddListener(LoseToMainMenu);
+        wintoMainButton.onClick.AddListener(WintoMainMenu);
+        loseToMainButton.onClick.AddListener(LoseToMainMenu);
         onOffMusicButton.onClick.AddListener(OnOffMusic);
         onOffVibrationButton.onClick.AddListener(OnOffVibration);
+    }
+    public void SetSlider()
+    {
+        slider.value =4+ (60-GameManager.Instance.aliveNumber)/10;
+    }
+    public void WintoMainMenu()
+    {
+        DataManager.Instance.currentZone++;
+        LevelManager.Instance.Start();
+        winPanel.SetActive(false);  
+        mainMenuPanel.SetActive(true);
+        SetZoneAndHightScore(DataManager.Instance.currentZone, GameManager.Instance.aliveNumber);
+        coin.SetActive(true);
+    }
+    public void SetZoneAndHightScore(int zone, int hightScore)
+    {
+        zoneAndHightScore.text = "ZONE:" + (zone) + "  -  " + "BEST:#"+  (hightScore);
     }
     public void SetKillerName(string killerName)
     {
@@ -35,11 +59,21 @@ public class UIManager : Singleton<UIManager>
     }
     public void SetRank()
     {
-        rank.text = "#"+ GameManager.Instance.aliveNumber;
+        rank.text = "#"+ (GameManager.Instance.aliveNumber+1);
     }
     public void TurnLosePanel()
     { 
         losePanel.SetActive(true);
+        playPanel.SetActive(false);
+    }
+    public bool CheckWinPanel()
+    {
+        if (winPanel.active == true) return true;
+        else return false;
+    }
+    public void TurnWinPanel()
+    {
+        winPanel.SetActive(true);
         playPanel.SetActive(false);
     }
     public void LoseToMainMenu() {

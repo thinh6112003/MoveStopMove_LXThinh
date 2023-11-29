@@ -63,10 +63,13 @@
     <Compile Include="Assets\_Game\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\HUD Indicator\Demo\Scripts\PrefabSpawner.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\KnifeWeapon.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\HammerWeapon.cs" />
+    <Compile Include="Assets\HUD Indicator\Demo\Scripts\Rotate.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Bot.cs" />
     <Compile Include="Assets\_Game\Scripts\Manager\LevelManager.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\SliderController.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\UILookAtCamera.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\_Game\Scripts\Manager\DataManager.cs" />
@@ -89,6 +92,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\HUD Indicator\Demo\Textures\credits.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -802,6 +806,10 @@
     <ProjectReference Include="CW.Common.csproj">
       <Project>{EBC96986-58EB-1A46-054A-DBE02FB8FD0C}</Project>
       <Name>CW.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="HUDIndicator.csproj">
+      <Project>{4D6D8746-5102-FFBE-E6AD-7EE6C4CBD166}</Project>
+      <Name>HUDIndicator</Name>
     </ProjectReference>
     <ProjectReference Include="LeanCommon.csproj">
       <Project>{C1EB737F-F808-63F5-7758-D237B671883F}</Project>

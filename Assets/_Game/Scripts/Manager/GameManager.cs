@@ -14,6 +14,14 @@ public class GameManager : Singleton<GameManager>
     {
         playButton.onClick.AddListener(ChangeGameState);
     }
+    private void Update()
+    {
+        if(aliveNumber==1&& LevelManager.Instance.playerGamePlay.isDead != true&& !UIManager.Instance.CheckWinPanel())
+        {
+            gameState = GameState.UNPLAY;
+            UIManager.Instance.TurnWinPanel();
+        }
+    }
     public void SetAlive()
     {
         aliveNumber--;
