@@ -12,8 +12,6 @@ public class Player : Character
     protected override void Start()
     {
         floatingJoystick = LevelManager.Instance.floatingJoystick;
-        weaponData = DataManager.Instance.GetWeaponData(WeaponType.HAMMER);
-        base.Start();
     }
     private void Update()
     {
@@ -26,7 +24,6 @@ public class Player : Character
         }
     }
     
-
     private void OnMove()
     {
         Vector3 moveVector= Vector3.zero;
@@ -53,7 +50,7 @@ public class Player : Character
         {
             for (int i = 0; i < botInRange.Count; i++)
             {
-                if (botInRange[i].name == other.name)
+                if (botInRange[i]!= null&&botInRange[i].name == other.name)
                 {
                     other.GetComponent<Bot>().indicator.SetActive(false);
                     botInRange.RemoveAt(i);

@@ -6,11 +6,14 @@ using TMPro;
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private Button playButton;
+    [SerializeField] private Button changeWeaponButton;
+    [SerializeField] private Button turnOffChangeWeaponButton;
     [SerializeField] private Button loseToMainButton;
     [SerializeField] private Button wintoMainButton;
     [SerializeField] private Button onOffMusicButton;
     [SerializeField] private Button onOffVibrationButton;
     [SerializeField] private GameObject coin;      
+    [SerializeField] private GameObject changeWeaponPanel;      
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject winPanel;
@@ -30,11 +33,25 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI nextZone; 
     private void Awake()
     {
+        turnOffChangeWeaponButton.onClick.AddListener(TurnOffChangeWeapon);
+        changeWeaponButton.onClick.AddListener(TurnOnChangeWeapon);
         playButton.onClick.AddListener(TurnOffMainMenu);
         wintoMainButton.onClick.AddListener(WintoMainMenu);
         loseToMainButton.onClick.AddListener(LoseToMainMenu);
         onOffMusicButton.onClick.AddListener(OnOffMusic);
         onOffVibrationButton.onClick.AddListener(OnOffVibration);
+    }
+    public void TurnOnChangeWeapon()
+    {
+        mainMenuPanel.SetActive(false);
+        changeWeaponPanel.SetActive(true);
+        ShopUI.Instance.LoadStart();
+    }
+    public void TurnOffChangeWeapon()
+    {
+        mainMenuPanel.SetActive(true);
+        changeWeaponPanel.SetActive(false);
+        ShopUI.Instance.DestroyWeapon();
     }
     public void SetSlider()
     {

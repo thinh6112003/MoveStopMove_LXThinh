@@ -8,18 +8,13 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private Player playerPrefab;
     [SerializeField] private Bot bot;
     [SerializeField] private List<Bot> listBot;
-    public Player playerGamePlay;
-    public FloatingJoystick floatingJoystick;
     private GameObject zone;
     private int ibot;
-    public WeaponItemData currentWeapon;
-    public WeaponType playerWeaponType;
-
+    public FloatingJoystick floatingJoystick;
+    public Player playerGamePlay;
     public void Start()
     {
         if(zone!= null) Destroy(zone);
-        currentWeapon = 
-            DataManager.Instance.weaponDataScriptableObject.listWeapon[(int)playerWeaponType];
         //if(playerGamePlay!= null)LeanPool.Despawn(playerGamePlay);
         if (playerGamePlay== null||!playerGamePlay.gameObject.active)
         { 
@@ -31,6 +26,18 @@ public class LevelManager : Singleton<LevelManager>
         }
         zone = Instantiate((GameObject)Resources.Load($"Zone" + DataManager.Instance.currentZone));
         //NavMeshBuilder.BuildNavMesh();
+        if (playerGamePlay.weapon == null)
+        {
+            playerGamePlay.weaponData =
+                DataManager.Instance.GetWeaponData(WeaponType.HAMMER);
+            playerGamePlay.weapon =
+                Instantiate(playerGamePlay.weaponData.weapon, playerGamePlay.weaponContainer);
+            Weapon weapon;
+            weapon = playerGamePlay.weapon;
+            weapon.transform.localPosition = new Vector3(0, 0, 0);
+            weapon.transform.localRotation = Quaternion.Euler(180, 0, 0);
+        }
+        
         GameManager.Instance.aliveNumber = 50;
         playerGamePlay.isDead = false;
         playerGamePlay.botInRange = new List<GameObject>();

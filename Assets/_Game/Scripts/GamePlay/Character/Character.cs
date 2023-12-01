@@ -6,14 +6,14 @@ using Lean.Pool;
 public class Character : MonoBehaviour
 {
     [SerializeField]private Transform throwPoint;
-    [SerializeField]private Transform weaponContainer;
-    private Weapon weapon;
     private Vector3 direc;
-    public bool isDead = false;
     protected bool isAttack = false;
-    protected WeaponItemData weaponData;
     protected string currentAnimName= constr.IDLE;
     protected string lastAnimName= constr.RUN;
+    public WeaponItemData weaponData;
+    public bool isDead = false;
+    public Transform weaponContainer;
+    public Weapon weapon;
     public bool isStopMove = false;
     public GameObject collider;
     public Vector3 scale = new Vector3(1, 1, 1);

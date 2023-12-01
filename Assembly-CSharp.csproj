@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\StateMachine\AttackState.cs" />
-    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\ChangeWeapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\ChangeWeaponClass.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\Weapon.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\Bullet.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\StateMachine\PatrolState.cs" />
@@ -88,6 +88,7 @@
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Character.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\HammerBullet.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\MainCamera.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\ShopUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
