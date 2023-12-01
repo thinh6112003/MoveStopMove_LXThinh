@@ -12,5 +12,4 @@ public class WeaponItemData
     public WeaponType weaponType;
     public Bullet bullet;
     public Weapon weapon;
-    public float range;
 }

@@ -365,6 +365,7 @@
 "Assets/_Game/Scripts/GamePlay/Character/StateMachine/PatrolState.cs"
 "Assets/_Game/Scripts/GamePlay/Data/WeaponDataScriptableObject.cs"
 "Assets/_Game/Scripts/GamePlay/Data/WeaponItemData.cs"
+"Assets/_Game/Scripts/GamePlay/Other/ChangeWeapon.cs"
 "Assets/_Game/Scripts/GamePlay/Other/MainCamera.cs"
 "Assets/_Game/Scripts/GamePlay/Other/Singleton.cs"
 "Assets/_Game/Scripts/GamePlay/Other/SliderController.cs"

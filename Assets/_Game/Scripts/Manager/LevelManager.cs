@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Lean.Pool;
+using UnityEngine.AI;
 public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private Player playerPrefab;
@@ -11,10 +12,14 @@ public class LevelManager : Singleton<LevelManager>
     public FloatingJoystick floatingJoystick;
     private GameObject zone;
     private int ibot;
+    public WeaponItemData currentWeapon;
+    public WeaponType playerWeaponType;
 
     public void Start()
     {
         if(zone!= null) Destroy(zone);
+        currentWeapon = 
+            DataManager.Instance.weaponDataScriptableObject.listWeapon[(int)playerWeaponType];
         //if(playerGamePlay!= null)LeanPool.Despawn(playerGamePlay);
         if (playerGamePlay== null||!playerGamePlay.gameObject.active)
         { 
@@ -25,6 +30,7 @@ public class LevelManager : Singleton<LevelManager>
             playerGamePlay.transform.position = new Vector3(0, 1, 0);
         }
         zone = Instantiate((GameObject)Resources.Load($"Zone" + DataManager.Instance.currentZone));
+        //NavMeshBuilder.BuildNavMesh();
         GameManager.Instance.aliveNumber = 50;
         playerGamePlay.isDead = false;
         playerGamePlay.botInRange = new List<GameObject>();

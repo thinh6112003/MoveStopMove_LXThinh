@@ -39,6 +39,7 @@ public class UIManager : Singleton<UIManager>
     public void SetSlider()
     {
         slider.value =4+ (60-GameManager.Instance.aliveNumber)/10;
+        /// cong thuc tinh slide
     }
     public void WintoMainMenu()
     {
