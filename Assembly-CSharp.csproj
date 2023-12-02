@@ -76,6 +76,7 @@
     <Compile Include="Assets\_Game\Scripts\Manager\DataManager.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Player.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\DynamicData.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\StateMachine\IState.cs" />
     <Compile Include="Assets\_Game\Scripts\Manager\UIManager.cs" />
@@ -88,7 +89,11 @@
     <Compile Include="Assets\_Game\Scripts\GamePlay\Character\Character.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\HammerBullet.cs" />
     <Compile Include="Assets\_Game\Scripts\GamePlay\Other\MainCamera.cs" />
-    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\ShopUI.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\UziWeapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\UziBullet.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\ArrowWeapon.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Weapon\ArrowBullet.cs" />
+    <Compile Include="Assets\_Game\Scripts\GamePlay\Other\ShopWeaponUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

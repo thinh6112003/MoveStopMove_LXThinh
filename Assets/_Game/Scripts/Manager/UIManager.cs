@@ -45,13 +45,13 @@ public class UIManager : Singleton<UIManager>
     {
         mainMenuPanel.SetActive(false);
         changeWeaponPanel.SetActive(true);
-        ShopUI.Instance.LoadStart();
+        ShopWeaponUI.Instance.LoadStart();
     }
     public void TurnOffChangeWeapon()
     {
         mainMenuPanel.SetActive(true);
         changeWeaponPanel.SetActive(false);
-        ShopUI.Instance.DestroyWeapon();
+        ShopWeaponUI.Instance.DestroyWeapon();
     }
     public void SetSlider()
     {

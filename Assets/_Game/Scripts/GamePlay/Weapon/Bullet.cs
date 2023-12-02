@@ -4,6 +4,7 @@ using UnityEngine;
 using Lean.Pool;
 public class Bullet : MonoBehaviour
 {
+    private float timerlimited= 0.65f;
     public GameObject shooter;
     public Rigidbody rigidbody;
     public float timer = 0;
@@ -11,7 +12,7 @@ public class Bullet : MonoBehaviour
     protected virtual void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 0.6f)LeanPool.Despawn(gameObject);
+        if (timer > timerlimited *shooter.GetComponent<Character>().scale.x)LeanPool.Despawn(gameObject);
     }
     protected virtual void OnTriggerEnter(Collider other)
     {

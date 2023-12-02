@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
 {
     [SerializeField]private Transform throwPoint;
     private Vector3 direc;
+    private float bulletSpeed=10;
     protected bool isAttack = false;
     protected string currentAnimName= constr.IDLE;
     protected string lastAnimName= constr.RUN;
@@ -24,8 +25,8 @@ public class Character : MonoBehaviour
     protected virtual void Start()
     {
             weapon = Instantiate(weaponData.weapon, weaponContainer);
-            weapon.gameObject.transform.localPosition = new Vector3(0, 0, 0);
-            weapon.transform.localRotation = Quaternion.Euler(180, 0, 0);
+            weapon.transform.localPosition = weaponData.positionOffsetCharacter;
+            weapon.transform.localRotation = Quaternion.Euler(weaponData.rotationOffsetCharacter);
     }
     public void OnAttack(Transform target)
     {
@@ -46,7 +47,7 @@ public class Character : MonoBehaviour
             newBullet.transform.position = throwPoint.position;
             newBullet.transform.rotation= Quaternion.LookRotation(new Vector3(direc.x, 0f, direc.z));
             newBullet.timer = 0;
-            newBullet.rigidbody.velocity = transform.forward * 10f;
+            newBullet.rigidbody.velocity = transform.forward * bulletSpeed;
             Invoke(nameof(SetFalseAttack), 1f);
         }
     }

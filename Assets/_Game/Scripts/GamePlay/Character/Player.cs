@@ -89,6 +89,7 @@ public class Player : Character
 }
 public static class constr
 {
+    public static string PLAYERPREFKEY = "PlayerprefKey";
     public static string CHARACTER = "Character";
     public static string WEAPON = "Weapon";
     public static string IDLE = "idle";

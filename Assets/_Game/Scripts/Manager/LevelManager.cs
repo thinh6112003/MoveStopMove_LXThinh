@@ -14,7 +14,7 @@ public class LevelManager : Singleton<LevelManager>
     public Player playerGamePlay;
     public void Start()
     {
-        if(zone!= null) Destroy(zone);
+        if (zone!= null) Destroy(zone);
         //if(playerGamePlay!= null)LeanPool.Despawn(playerGamePlay);
         if (playerGamePlay== null||!playerGamePlay.gameObject.active)
         { 
@@ -24,18 +24,20 @@ public class LevelManager : Singleton<LevelManager>
         {
             playerGamePlay.transform.position = new Vector3(0, 1, 0);
         }
+        playerGamePlay.scale = new Vector3(1, 1, 1);
+        playerGamePlay.transform.localScale = playerGamePlay.scale;
         zone = Instantiate((GameObject)Resources.Load($"Zone" + DataManager.Instance.currentZone));
         //NavMeshBuilder.BuildNavMesh();
         if (playerGamePlay.weapon == null)
         {
             playerGamePlay.weaponData =
-                DataManager.Instance.GetWeaponData(WeaponType.HAMMER);
+                DataManager.Instance.GetWeaponData(
+                    DataManager.Instance.dynamicData.weaponType);
             playerGamePlay.weapon =
                 Instantiate(playerGamePlay.weaponData.weapon, playerGamePlay.weaponContainer);
-            Weapon weapon;
-            weapon = playerGamePlay.weapon;
-            weapon.transform.localPosition = new Vector3(0, 0, 0);
-            weapon.transform.localRotation = Quaternion.Euler(180, 0, 0);
+            playerGamePlay.weapon.transform.localPosition =playerGamePlay.weaponData.positionOffsetCharacter;
+            playerGamePlay.weapon.transform.localRotation = Quaternion.Euler(
+                playerGamePlay.weaponData.rotationOffsetCharacter); 
         }
         
         GameManager.Instance.aliveNumber = 50;
