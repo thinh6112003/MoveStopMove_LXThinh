@@ -6,12 +6,12 @@ using TMPro;
 
 public class Bot : Character
 {
-    [SerializeField]private Rigidbody rigidbody;
     [SerializeField]private LayerMask characterLayer;
     private float radius = 20;
     private int layerDefault= 1 << 0;
     private IState currentState;
 
+    public Rigidbody rigidbody;
     public TextMeshProUGUI textName;
     public GameObject indicator;
     public Vector3 nextPosition;

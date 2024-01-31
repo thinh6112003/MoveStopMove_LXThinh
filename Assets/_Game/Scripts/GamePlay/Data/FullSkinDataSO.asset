@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4df06afca405ce449b964b6aa128586, type: 3}
+  m_Name: FullSkinDataSO
+  m_EditorClassIdentifier: 
+  listFullSkin:
+  - fullSkinType: 0
+    sprite: {fileID: 21300000, guid: 47489d63e5926ef478fda009b5f7b683, type: 3}
+    model: {fileID: 4777426604573351685, guid: daaf05cfccac79c469468c88dd3a6a2c, type: 3}
+    price: 300
+  - fullSkinType: 1
+    sprite: {fileID: 21300000, guid: 8f00f4e5c6662634d9d6fb1e2e2b01ce, type: 3}
+    model: {fileID: 6310864564142164163, guid: 5af65c7e46d483f4289ad7059a2e0c80, type: 3}
+    price: 350
+  - fullSkinType: 2
+    sprite: {fileID: 21300000, guid: 10f805f9a39668441b0d858a53a90087, type: 3}
+    model: {fileID: 2479119460820095043, guid: 593afb4b253729f47a21ed406856b090, type: 3}
+    price: 50
+  - fullSkinType: 3
+    sprite: {fileID: 21300000, guid: 74f22cae5f11d6049b5ad45d2c791d6d, type: 3}
+    model: {fileID: 1541822323466206756, guid: 7602ce0074cea6e418239e362d2a6587, type: 3}
+    price: 400
+  - fullSkinType: 4
+    sprite: {fileID: 21300000, guid: cf2c2f0409a120d4084268be4362625f, type: 3}
+    model: {fileID: 4928875838342334733, guid: 1421a2daad415ce4088e98f1f2cc42c8, type: 3}
+    price: 50

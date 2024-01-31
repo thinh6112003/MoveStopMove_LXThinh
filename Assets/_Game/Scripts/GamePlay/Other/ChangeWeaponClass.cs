@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ChangeWeaponClass : MonoBehaviour
 {
+    
     public static void ChangeWeapon(WeaponType weaponType)
     {
-        LevelManager.Instance.playerGamePlay.weaponData =
-            DataManager.Instance.weaponDataSO.listWeapon[(int)weaponType];
+        Player player = LevelManager.Instance.playerGamePlay;
+        WeaponItemData weaponData = LevelManager.Instance.playerGamePlay.weaponData;
+        weaponData = DataManager.Instance.listWeaponItemData[(int)weaponType];
         Destroy(LevelManager.Instance.playerGamePlay.weapon.gameObject);
         Weapon weapon=
                Instantiate( LevelManager.Instance.playerGamePlay.weaponData.weapon,

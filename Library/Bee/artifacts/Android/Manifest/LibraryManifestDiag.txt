@@ -1,0 +1,13 @@
+Using template 'D:/Unity data/unity/2021.3.30f1/Editor/Data/PlaybackEngines/AndroidPlayer\Apk\UnityManifest.xml'
+
+android.hardware.vulkan.version was added because:
+	One of the graphics devices was Vulkan
+android.hardware.touchscreen.multitouch, android.hardware.touchscreen.multitouch.distinct were enabled because:
+	UnityEngine.Input::GetTouch was present in:
+		CW.Common-FeaturesChecked.txt
+		UnityEngine.UI-FeaturesChecked.txt
+	UnityEngine.Input::get_touchCount was present in:
+		CW.Common-FeaturesChecked.txt
+		UnityEngine.UI-FeaturesChecked.txt
+	UnityEngine.Input::set_multiTouchEnabled was present in:
+		Assembly-CSharp-FeaturesChecked.txt

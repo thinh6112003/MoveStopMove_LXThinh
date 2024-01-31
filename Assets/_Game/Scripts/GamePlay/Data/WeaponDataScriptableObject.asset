@@ -38,66 +38,74 @@ MonoBehaviour:
     rotationOffsetCharacter: {x: 0, y: 0, z: 77.34}
     positionOffsetCharacter: {x: 0.16, y: 0.05, z: 0}
   - weaponType: 3
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
+    bullet: {fileID: 403792136423851006, guid: 68ebf41b36f944841bea793b684fb670, type: 3}
+    weapon: {fileID: 7596573486839175273, guid: 83cce5ae874a3df48983f121e1121945, type: 3}
+    name: Candy0
     price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: -0.000019777814, y: 0.000031732772, z: 238.63257}
+    positionOffsetCharacter: {x: -0.1, y: 0.08, z: 0.07}
   - weaponType: 4
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
+    bullet: {fileID: 4011470333312380733, guid: 791c3a7d9a71d924c9923e3f8509e9b6, type: 3}
+    weapon: {fileID: 6774284175394452798, guid: c3a5c59669e701b41afa481a6d1fd945, type: 3}
+    name: Candy1
     price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: 0.92483795, y: 6.1401505, z: 255.25912}
+    positionOffsetCharacter: {x: -0.176, y: 0.124, z: 0.071}
   - weaponType: 5
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
+    bullet: {fileID: 3737205317786558241, guid: 0bc86b69a3f94eb47a49e74e62642a43, type: 3}
+    weapon: {fileID: 7058742502314574937, guid: 26e632cab6c919d4c8d4fad4c70b2787, type: 3}
     name: Knife
     price: 50
     rotationOffsetShop: {x: 180, y: 20, z: 20}
-    rotationOffsetCharacter: {x: 180, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    rotationOffsetCharacter: {x: 23.872072, y: 2.3474715, z: 275.67828}
+    positionOffsetCharacter: {x: -0.062, y: 0.098, z: 0.098}
   - weaponType: 6
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
+    bullet: {fileID: 6520046260102715636, guid: d5f250c755f2404468ad3c07c2434527, type: 3}
+    weapon: {fileID: 4445342417034488303, guid: 4862df210bfb03e41b988eddf9a22ba6, type: 3}
+    name: Candy3
     price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: 355.15903, y: 176.18553, z: 160.19978}
+    positionOffsetCharacter: {x: -0.076, y: 0.203, z: 0.042}
   - weaponType: 7
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
-    price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    bullet: {fileID: 6344471663285172260, guid: f30169e9784dd3842b66be39029b5fb6, type: 3}
+    weapon: {fileID: 5788512564154760188, guid: ff01ced5370fe434eab1c3074fa353d0, type: 3}
+    name: Boomerang
+    price: 850
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: -0.0000048565576, y: 0.000047304682, z: 92.25665}
+    positionOffsetCharacter: {x: -0.278, y: -0.135, z: 0.033}
   - weaponType: 8
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
-    price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    bullet: {fileID: 2056346614369932291, guid: c5814229216bebc47a08ead6059756e3, type: 3}
+    weapon: {fileID: 2382086924416279868, guid: eaa040d18fad21b4fa751e91e3f594a6, type: 3}
+    name: Axe0
+    price: 900
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: 13.653622, y: 1.4335425, z: 276.05164}
+    positionOffsetCharacter: {x: 0, y: 0.09, z: 0.08}
   - weaponType: 9
-    bullet: {fileID: 8267359574759423571, guid: 6f47063f1705b664e8dde6b647d3ed2d, type: 3}
-    weapon: {fileID: 3871186137121025568, guid: 0b473a9c247faaa448319ec678d0235d, type: 3}
-    name: Knife
-    price: 50
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
-    rotationOffsetCharacter: {x: 0, y: 0, z: 0}
-    positionOffsetCharacter: {x: 0, y: 0, z: 0}
+    bullet: {fileID: 613835293777796908, guid: 5a5ad3c9ee90a3f4d8bcce150d48eca5, type: 3}
+    weapon: {fileID: 5726393994583227286, guid: f2be31fe6690f0442badf1f8902b4465, type: 3}
+    name: Axe1
+    price: 950
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: -0.0000352898, y: 0.0000006083069, z: 242.32951}
+    positionOffsetCharacter: {x: -0.168, y: 0.141, z: 0.031}
   - weaponType: 10
     bullet: {fileID: 5698007614994335499, guid: cfc11295984d6bc4d9e134d656a51b67, type: 3}
     weapon: {fileID: 6175481254896815428, guid: d3f0002a4f5ba9a4c8385f7c3ca629c8, type: 3}
     name: Arrow
     price: 1000
-    rotationOffsetShop: {x: 0, y: 0, z: 0}
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
+    rotationOffsetCharacter: {x: 0, y: 180, z: 140.77002}
+    positionOffsetCharacter: {x: -0.165, y: 0.215, z: 0.021}
+  - weaponType: 11
+    bullet: {fileID: 1252350898508341594, guid: b5667ece217e0044fb5bd6a0e2e9238e, type: 3}
+    weapon: {fileID: 1317842351756821891, guid: 658c0538448ce1347a20e3a92039817d, type: 3}
+    name: Z
+    price: 1050
+    rotationOffsetShop: {x: 180, y: 20, z: 20}
     rotationOffsetCharacter: {x: 0, y: 180, z: 140.77002}
     positionOffsetCharacter: {x: -0.165, y: 0.215, z: 0.021}

@@ -18,17 +18,18 @@ public class Player : Character
         if (isDead) return;
         OnMove();
         timer += Time.deltaTime;
-        if (timer >=timeRun&& isStopMove&& botInRange.Count>0&& botInRange[0]!=null&& GameManager.Instance.gameState!= GameState.UNPLAY)
+        if (timer >=timeRun&& isStopMove&& botInRange.Count>0&& GameManager.Instance.gameState!= GameState.UNPLAY)
         {
-            OnAttack(botInRange[0].transform);
+            if (botInRange[0] != null) OnAttack(botInRange[0].transform);
+            else botInRange.RemoveAt(0);
         }
     }
     
     private void OnMove()
     {
         Vector3 moveVector= Vector3.zero;
-        moveVector.x = floatingJoystick.Horizontal* moveSpeed;
-        moveVector.z = floatingJoystick.Vertical* moveSpeed;
+        moveVector.x = floatingJoystick.Horizontal* moveSpeed* Time.deltaTime;
+        moveVector.z = floatingJoystick.Vertical* moveSpeed* Time.deltaTime;
         if ((moveVector.x != 0 || moveVector.z != 0 )&& GameManager.Instance.gameState== GameState.PLAY)
         {
             if(currentAnimName!= constr.RUN) SetAnimation(AnimationType.RUN);
@@ -71,6 +72,7 @@ public class Player : Character
             if(bullet.shooter.name != gameObject.name)
             {
                 SetAnimation(AnimationType.DEAD);
+                LevelManager.Instance.setEndGame();
                 LeanPool.Despawn(gameObject);
                 if(DataManager.Instance.hightScore > GameManager.Instance.aliveNumber)
                 {
@@ -78,13 +80,57 @@ public class Player : Character
                 }
                 GameManager.Instance.gameState = GameState.UNPLAY;
                 UIManager.Instance.SetKillerName(bullet.shooter.name);
-                UIManager.Instance.SetZoneAndHightScore(DataManager.Instance.currentZone,GameManager.Instance.aliveNumber+1);
+                UIManager.Instance.SetZoneAndHightScore(DataManager.Instance.currentZone, DataManager.Instance.hightScore);
                 UIManager.Instance.SetSlider();
                 UIManager.Instance.TurnLosePanel();
                 UIManager.Instance.SetRank();
                 isDead = true;
             }
         }
+    }
+    public void SetWeapon()
+    {
+        weaponData =DataManager.Instance.GetWeaponData(DataManager.Instance.userData.currentWeaponType);
+        weapon =Instantiate(weaponData.weapon, weaponContainer);
+        weapon.transform.localPosition = weaponData.positionOffsetCharacter;
+        weapon.transform.localRotation = Quaternion.Euler(weaponData.rotationOffsetCharacter);
+    }
+    public void ChangeWeapon(WeaponType weaponType)
+    {
+        weaponData = DataManager.Instance.listWeaponItemData[(int)weaponType];
+        Destroy(this.weapon.gameObject);
+        weapon =Instantiate(weaponData.weapon,weaponContainer);
+        this.weapon.transform.localPosition = weaponData.positionOffsetCharacter;
+        this.weapon.transform.localRotation = Quaternion.Euler(weaponData.rotationOffsetCharacter);
+    }
+    public void ChangeHat(int hatType)
+    {
+        HatItemData hatItemData = DataManager.Instance.hatDataSO.listHat[hatType];
+        if(currentSkin!= null)
+        {
+            Destroy(currentSkin);
+        }
+        currentSkin = Instantiate(hatItemData.model, hatContainer);
+        currentSkin.transform.localPosition = hatItemData.positionOffset;
+        currentSkin.transform.localRotation = Quaternion.Euler( hatItemData.rotationOffset);
+        currentSkin.transform.localScale= hatItemData.scaleOffset;
+    }
+    public void ChangeShort(int shortType)
+    {
+        ShortItemData shortItemData = DataManager.Instance.shortDataSO.listShort[shortType];
+        pant.GetComponent<Renderer>().material = shortItemData.material;
+    }
+    public void ChangeShield(int accessoryType)
+    {
+        AccessoryItemData accessoryItemData = DataManager.Instance.accessoryDataSO.listAccessory[accessoryType];
+        if (currentSkin != null)
+        {
+            Destroy(currentSkin);
+        }
+        currentSkin = Instantiate(accessoryItemData.model, shieldContainer);
+        currentSkin.transform.localPosition = accessoryItemData.positionOffset;
+        currentSkin.transform.localRotation = Quaternion.Euler(accessoryItemData.rotationOffset);
+        currentSkin.transform.localScale = accessoryItemData.scaleOffset;
     }
 }
 public static class constr

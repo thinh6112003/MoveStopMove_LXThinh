@@ -14,7 +14,14 @@ public class AttackState : IState
         bot.myAgent.SetDestination(bot.transform.position);
         bot.Invoke(nameof(bot.ChangeAnimIdle), timeIdle);
         timer = 0;
-        if (bot.botInRange.Count > 0&& bot.botInRange[0]!=null) bot.OnAttack(bot.botInRange[0].transform);
+        if (bot.botInRange.Count > 0)
+        {
+            if(bot.botInRange[0] != null)
+            {
+                bot.OnAttack(bot.botInRange[0].transform);
+            }
+            bot.botInRange.RemoveAt(0);
+        }
     }
 
     public void OnExecute(Bot bot)

@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
                 Character character= shooter.GetComponent<Character>();
                 character.scale = new Vector3(character.scale.x + 0.03f, character.scale.y + 0.03f, character.scale.z + 0.03f);
                 character.gameObject.transform.localScale = character.scale;
-                Destroy(gameObject);
+                LeanPool.Despawn(gameObject);
             }
         }
     }

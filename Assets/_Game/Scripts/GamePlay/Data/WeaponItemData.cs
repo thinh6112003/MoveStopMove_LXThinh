@@ -14,6 +14,7 @@ public enum WeaponType{
     AXE0,
     AXE1,
     ARROW,
+    Z,
 }
 [Serializable]
 public class WeaponItemData

@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e507b0a5535334884e530823f99952, type: 3}
+  m_Name: HatDataSO
+  m_EditorClassIdentifier: 
+  listHat:
+  - hatType: 0
+    sprite: {fileID: 21300000, guid: eb69cff6254433d4e9c38084ef04f590, type: 3}
+    model: {fileID: 2857934848566627374, guid: 85dad120ececbf647a0f9bb5e71f8ca7, type: 3}
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    price: 50
+  - hatType: 1
+    sprite: {fileID: 21300000, guid: 1cbb565e6302e234e82c3d5766667afd, type: 3}
+    model: {fileID: 9190139882657878351, guid: f94e91add5428dc409b68def1b3252e3, type: 3}
+    positionOffset: {x: 0, y: -0.36, z: 0}
+    rotationOffset: {x: 0, y: 120, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    price: 50
+  - hatType: 2
+    sprite: {fileID: 21300000, guid: e18f18b183a01424f8c20f088905e355, type: 3}
+    model: {fileID: 7227758999606940476, guid: 5ebb954e80de3604cb378fd9607c3fe4, type: 3}
+    positionOffset: {x: 0.012, y: -0.267, z: 0.019}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 80, y: 80, z: 80}
+    price: 50
+  - hatType: 3
+    sprite: {fileID: 21300000, guid: 5c06bab390a79764d8d0539b57b1cf45, type: 3}
+    model: {fileID: 5705430970221204486, guid: 9d472c8ac35a835418daa080041720e5, type: 3}
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: -90, y: 0, z: 0}
+    scaleOffset: {x: 30, y: 30, z: 30}
+    price: 50
+  - hatType: 4
+    sprite: {fileID: 21300000, guid: da18f161bc01907449ffa4e6f5b50614, type: 3}
+    model: {fileID: 7078846271699739526, guid: a2e77b41d5460cd4698c132739ad5d19, type: 3}
+    positionOffset: {x: 0, y: 0, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    price: 50
+  - hatType: 5
+    sprite: {fileID: 21300000, guid: 703801d9a7f60c244a3ee076f49edb23, type: 3}
+    model: {fileID: 4297189909374666965, guid: f0a22f9fa40fe1e4e945ba4583a9f293, type: 3}
+    positionOffset: {x: 0, y: -0.07, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 17, y: 17, z: 17}
+    price: 50
+  - hatType: 6
+    sprite: {fileID: 21300000, guid: afbe2aeef5262db48ac8ac1124dfd412, type: 3}
+    model: {fileID: 884421288444737639, guid: a9470be8e498180448ab3de467214038, type: 3}
+    positionOffset: {x: 0, y: -0.08, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    price: 50
+  - hatType: 7
+    sprite: {fileID: 21300000, guid: 618234528de04654db5493d4d04dbbf2, type: 3}
+    model: {fileID: 711522550592352899, guid: 4607af3f1157e17478bfe4a5322b1b72, type: 3}
+    positionOffset: {x: 0, y: -0.25, z: 0}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 1, y: 1, z: 1}
+    price: 50
+  - hatType: 8
+    sprite: {fileID: 21300000, guid: 578c1840f64bd634bad62c6f60eba249, type: 3}
+    model: {fileID: 885544395340249644, guid: 055aa00dd73ab8f4ea5a7efcf2d14a3f, type: 3}
+    positionOffset: {x: -0.014, y: -0.05, z: -0.219}
+    rotationOffset: {x: 0, y: 0, z: 0}
+    scaleOffset: {x: 2, y: 2, z: 2}
+    price: 50

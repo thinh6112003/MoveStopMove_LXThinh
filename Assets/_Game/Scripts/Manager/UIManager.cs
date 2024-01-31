@@ -7,13 +7,16 @@ public class UIManager : Singleton<UIManager>
 {
     [SerializeField] private Button playButton;
     [SerializeField] private Button changeWeaponButton;
+    [SerializeField] private Button skinButton;
     [SerializeField] private Button turnOffChangeWeaponButton;
+    [SerializeField] private Button turnOffSkinButton;
     [SerializeField] private Button loseToMainButton;
     [SerializeField] private Button wintoMainButton;
     [SerializeField] private Button onOffMusicButton;
     [SerializeField] private Button onOffVibrationButton;
     [SerializeField] private GameObject coin;      
     [SerializeField] private GameObject changeWeaponPanel;      
+    [SerializeField] private GameObject skinPanel;      
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject winPanel;
@@ -25,7 +28,8 @@ public class UIManager : Singleton<UIManager>
     [SerializeField] private Slider slider;
     private bool boolMusic= true;
     private bool boolVibration= true;
-    public TextMeshProUGUI textAlive;
+    public TextMeshProUGUI aliveText;
+    public TextMeshProUGUI cointText;
     public TextMeshProUGUI killerName;
     public TextMeshProUGUI rank;
     public TextMeshProUGUI zoneAndHightScore;
@@ -33,6 +37,8 @@ public class UIManager : Singleton<UIManager>
     public TextMeshProUGUI nextZone; 
     private void Awake()
     {
+        skinButton.onClick.AddListener(TurnOnSkinPanel);
+        turnOffSkinButton.onClick.AddListener(TurnOffSkinPanel);
         turnOffChangeWeaponButton.onClick.AddListener(TurnOffChangeWeapon);
         changeWeaponButton.onClick.AddListener(TurnOnChangeWeapon);
         playButton.onClick.AddListener(TurnOffMainMenu);
@@ -40,6 +46,26 @@ public class UIManager : Singleton<UIManager>
         loseToMainButton.onClick.AddListener(LoseToMainMenu);
         onOffMusicButton.onClick.AddListener(OnOffMusic);
         onOffVibrationButton.onClick.AddListener(OnOffVibration);
+        
+    }
+    private void Start()
+    {
+        loadCoin();
+    }
+    public void loadCoin()
+    {
+        cointText.text = "" + DataManager.Instance.userData.currentCoint;
+    }
+    public void TurnOnSkinPanel()
+    {
+        mainMenuPanel.SetActive(false);
+        skinPanel.SetActive(true);
+        ShopSkinUI.Instance.LoadHat();
+    }
+    public void TurnOffSkinPanel()
+    {
+        mainMenuPanel.SetActive(true);
+        skinPanel.SetActive(false);
     }
     public void TurnOnChangeWeapon()
     {
@@ -109,7 +135,7 @@ public class UIManager : Singleton<UIManager>
     }
     public void SetAlive(int aliveNumber)
     {
-        textAlive.text = "Alive: " + aliveNumber;
+        aliveText.text = "Alive: " + aliveNumber;
     }
     void OnOffMusic()
     {

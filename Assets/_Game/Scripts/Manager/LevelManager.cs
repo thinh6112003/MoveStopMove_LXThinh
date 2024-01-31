@@ -30,14 +30,7 @@ public class LevelManager : Singleton<LevelManager>
         //NavMeshBuilder.BuildNavMesh();
         if (playerGamePlay.weapon == null)
         {
-            playerGamePlay.weaponData =
-                DataManager.Instance.GetWeaponData(
-                    DataManager.Instance.dynamicData.weaponType);
-            playerGamePlay.weapon =
-                Instantiate(playerGamePlay.weaponData.weapon, playerGamePlay.weaponContainer);
-            playerGamePlay.weapon.transform.localPosition =playerGamePlay.weaponData.positionOffsetCharacter;
-            playerGamePlay.weapon.transform.localRotation = Quaternion.Euler(
-                playerGamePlay.weaponData.rotationOffsetCharacter); 
+            playerGamePlay.SetWeapon();
         }
         
         GameManager.Instance.aliveNumber = 50;
@@ -52,6 +45,25 @@ public class LevelManager : Singleton<LevelManager>
         for(int i=0;i < 10; i++)
         {
             SpawnBot();
+        }
+    }
+    public void ChangeFullSkin(int fullSkinType)
+    {
+        FullSkinItemData fullSkinItemData = DataManager.Instance.fullSkinDataSO.listFullSkin[fullSkinType];
+        Destroy(playerGamePlay.gameObject);
+        playerGamePlay = Instantiate(fullSkinItemData.model);
+        playerGamePlay.transform.position = new Vector3(0, 1, 0);
+        playerGamePlay.SetWeapon();
+    }
+    public void setEndGame()
+    {
+        for(int i=0;i< listBot.Count; i++)
+        {
+            if(listBot[i]!= null)
+            {
+                listBot[i].myAgent.SetDestination(listBot[i].transform.position);
+                listBot[i].rigidbody.velocity = Vector3.zero;
+            }
         }
     }
     public void SpawnBot()

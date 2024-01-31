@@ -14,6 +14,10 @@ public class Character : MonoBehaviour
     public WeaponItemData weaponData;
     public bool isDead = false;
     public Transform weaponContainer;
+    public Transform hatContainer;
+    public Transform shieldContainer;
+    public GameObject pant;
+    public GameObject currentSkin;
     public Weapon weapon;
     public bool isStopMove = false;
     public GameObject collider;
@@ -24,9 +28,10 @@ public class Character : MonoBehaviour
     public float timeRun = 3;
     protected virtual void Start()
     {
-            weapon = Instantiate(weaponData.weapon, weaponContainer);
-            weapon.transform.localPosition = weaponData.positionOffsetCharacter;
-            weapon.transform.localRotation = Quaternion.Euler(weaponData.rotationOffsetCharacter);
+        weapon = LeanPool.Spawn(weaponData.weapon, weaponContainer);
+        Transform weaponTransform = weapon.transform;
+        weaponTransform.localPosition = weaponData.positionOffsetCharacter;
+        weaponTransform.localRotation = Quaternion.Euler(weaponData.rotationOffsetCharacter);
     }
     public void OnAttack(Transform target)
     {
@@ -51,7 +56,6 @@ public class Character : MonoBehaviour
             Invoke(nameof(SetFalseAttack), 1f);
         }
     }
-
     private void SetFalseAttack()
     {
         isAttack = false;
